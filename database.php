@@ -1,4 +1,27 @@
 <?php
+
+class createDB{
+
+/*
+function conn(){
+$servername = "localhost";
+$username = "root";
+$password = "";
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+else{
+echo "Connected successfully";
+}
+}  */
+
+function Createdb(){
+	
+	
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -49,6 +72,23 @@ if ($conn->query($sql) === TRUE) {
     echo "Error creating database: " . $conn->error;
 } 
 
+}
+
+
+function insert(){
+$servername = "localhost";
+$username = "root";
+$password = "";
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+else{
+echo "Connected successfully";
+}
 // prepare and bind
 
 $stmt = $conn->prepare("INSERT INTO Employee_Master (Name, Gender, Birth_Date, Address, City, Province, Postal_Code, Email, Website_Link, Joining_Date, Annual_Basic_Pay) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -99,8 +139,50 @@ $stmt->execute();
 
 
 echo "New records created successfully";
-
 $stmt->close();
-
 $conn->close();
+
+}
+function select(){
+	
+	//to display record on webpage
+$sql = "SELECT * FROM Employee_Master";
+$result = $conn->query($sql);
+
+if($result->num_rows > 0)
+{
+	//output data of each row
+	while($row = $result->fetch_assoc()){
+		echo "id:" . $row["Employee_ID"]. "-Name:" .$row["Name"]. "" .$row["Gender"]. "<br>" . "" .$row["Birth_Date"]. "<br>". "" .$row["Address"]. "<br>". "" .$row["City"]. "<br>". "" .$row["Province"]. "<br>". "" .$row["Postal_Code"]. "<br>". "" .$row["Email"]. "<br>". "" .$row["Website_Link"]. "<br>". "" .$row["Joining_Date"]. "<br>". "" .$row["Annual_Basic_Pay"]. "<br>";
+	}
+}else{echo "0 result";
+}
+}
+
+function deleteRecord()
+{
+	// sql to delete a record
+$sql = "DELETE FROM Employee_Master WHERE id=3";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Record deleted successfully";
+} else {
+    echo "Error deleting record: " . $conn->error;
+}
+}
+function update()
+{
+}
+
+
+}
+
+
+
+$obj = new createDB;
+//$obj->conn();
+$obj->Createdb();
+$obj->insert();
+
+
 ?>
