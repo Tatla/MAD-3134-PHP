@@ -51,9 +51,10 @@ class Employee
 {
 	var $Eid;
 	var $Ename;
-	function _construct()
+	function Employee($id,$name)
 	{
-		echo "<h1>Employee Object</h1>";
+		$this->Eid=$id;
+		$this->Ename=$name;
 	}
 	function setData($id,$name)
 	{
@@ -78,10 +79,11 @@ function _destruct()
 class Salary extends Employee
 {
 var $basicPay;	
-function _construct($id,$name,$bpay)
+function Salary($id,$name,$bpay)
 	{
 		Employee::Employee($id,$name);
-		echo "<h1>Employee Salary Object</h1>";
+		$this->basicPay=$bpay;
+		//echo "<h1>Employee Salary Object</h1>";
 	}
 	function setSalary($bpay)
 	{
