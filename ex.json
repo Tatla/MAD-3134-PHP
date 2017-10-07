@@ -1,0 +1,22 @@
+{
+"firstName":"jass",
+"lastName":"kaur",
+"isAlive":true,
+"age":25,
+"address":{
+  "city": "newyork",
+  "state":"ny"
+  },
+  "phno":[
+  {
+  "type":"home",
+  "number":"234 765_545"
+  },
+  {
+  "type":"office",
+  "number":"233 765_545"
+  }
+  ],
+  "children":[],
+  "spouse":null
+  }
