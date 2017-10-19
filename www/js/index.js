@@ -34,12 +34,6 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-		document.getElementById("setLocalStorage").addEventListener("click", setLocalStorage);
-		
-		document.getElementById("removeProjectFromLocalStorage").addEventListener 
-   ("click", removeProjectFromLocalStorage);
-		
-		
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -53,14 +47,3 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-
-function setLocalStorage() { 
-   window.localStorage.setItem("Name", "John"); 
-    window.localStorage.setItem("Job", "Developer"); 
-  
-} 
-
-
-function removeProjectFromLocalStorage() {
-   localStorage.removeItem("Job");
-}

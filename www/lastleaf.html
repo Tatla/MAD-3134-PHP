@@ -5,25 +5,49 @@
       <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
       <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
       <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	  
+	  
+      <script>
+         $( document ).on( "pagecreate", function() {
+            $( "body > [data-role = 'panel']" ).panel();
+            $( "body > [data-role = 'panel'] [data-role = 'listview']" ).listview();
+         });
+         
+         $( document ).one( "pageshow", function() {
+            $( "body > [data-role = 'header']" ).toolbar();
+            $( "body > [data-role = 'header'] [data-role = 'navbar']" ).navbar();
+         });
+      </script>
    </head>
 
    <body>
-
-      <div data-role = "page" id = "pageone">
-         <div data-role = "header">
+   
+   <div id = "lastleaf">
+   <span style='color:red'></span>
+   
+   
+     <div data-role = "page" id = "pageone">
+	 <div data-role = "header">
             <h1> Story Book</h1>
           
          </div>
+		          
 
          <div data-role = "main" class = "ui-content">
             <h2>The Last Leaf</h2>
               <h3>O. Henry</h3>
 
-            <a href="#pagetwo" class="ui-btn ui-icon-home ui-btn-icon-left ui-btn-icon-notext ui-corner-all ui-shadow ui-shadow-icon  ui-btn-inline ui-nodisc-icon ui-alt-icon" data-transition="turnpage">next</a>
+            <a href="#pagetwo" class="ui-btn ui-btn-icon-left ui-corner-all ui-shadow ui-shadow-icon  ui-btn-inline ui-nodisc-icon ui-alt-icon" data-transition="turn">Start Reading</a>
          </div>
+		 
+		 
+	
+		 
+		 
 
          <div data-role = "footer">
-            <h1>Story by O. Henry</h1>
+          
+          <h1>Story by O. Henry</h1>
          </div>
       </div>
 
@@ -31,9 +55,18 @@
 
 
 
-      <div data-role = "page" id = "pagetwo">
+      <div data-role = "panel" id = "pagetwo" data-position = "right" 
+            data-display = "overlay" data-theme = "b">
          <div data-role = "header">
             <h1> Story Book</h1>
+			 <ul data-role = "listview">
+               <li data-icon = "delete"><a href = "#" data-rel = "close">Close</a></li>
+               <li><a href="lastleaf.html" rel="external">
+									<img src="img/discover.jpg"   width="210" height="150" /></a></li>
+               <li>The Last Leaf</li>
+             
+            </ul>
+
           
          </div>
 
@@ -53,7 +86,7 @@
 
      "She has one chance in - let us say, ten," he said, as he shook down the mercury in his clinical thermometer. " And that chance is for her to want to live. This way people have of lining-u on the side of the undertaker makes the entire pharmacopoeia look silly. Your little lady has made up her mind that she's not going to get well. Has she anything on her mind?"</p>
 
-            <a href="#pagethree" class="ui-btn ui-icon-home ui-btn-icon-left ui-btn-icon-notext ui-corner-all ui-shadow ui-shadow-icon  ui-btn-inline ui-nodisc-icon ui-alt-icon" data-transition="turn">next</a>
+            <a href="#pagethree" class="ui-btn  ui-btn-icon-left  ui-corner-all ui-shadow ui-shadow-icon  ui-btn-inline ui-nodisc-icon ui-alt-icon" data-transition="turn">Next</a>
          </div>
 
          <div data-role = "footer">
@@ -94,7 +127,7 @@
 
      Sue look solicitously out of the window. What was there to count? There was only a bare, dreary yard to be seen, and the blank side of the brick house twenty feet away. An old, old ivy vine, gnarled and decayed at the roots, climbed half way up the brick wall. The cold breath of autumn had stricken its leaves from the vine until its skeleton branches clung, almost bare, to the crumbling bricks.</p>
 
-            <a href="#pagefour" class="ui-btn ui-icon-home ui-btn-icon-left ui-btn-icon-notext ui-corner-all ui-shadow ui-shadow-icon  ui-btn-inline ui-nodisc-icon ui-alt-icon" data-transition="turn">next</a>
+            <a href="#pagefour" class=" ui-btn-icon-left ui-corner-all ui-shadow ui-shadow-icon  ui-btn-inline ui-nodisc-icon ui-alt-icon" data-transition="turn">Next</a>
          </div>
 
          <div data-role = "footer">
@@ -133,7 +166,7 @@
 
      "I'd rather be here by you," said Sue. "Beside, I don't want you to keep looking at those silly ivy leaves."</p>
 
-            <a href="#pagefive" class="ui-btn ui-icon-home ui-btn-icon-left ui-btn-icon-notext ui-corner-all ui-shadow ui-shadow-icon  ui-btn-inline ui-nodisc-icon ui-alt-icon" data-transition="turn">next</a>
+            <a href="#pagefive" class=" ui-btn-icon-left  ui-corner-all ui-shadow ui-shadow-icon  ui-btn-inline ui-nodisc-icon ui-alt-icon" data-transition="turn">Next</a>
          </div>
 
          <div data-role = "footer">
@@ -163,12 +196,15 @@
 
      Old Behrman, with his red eyes plainly streaming, shouted his contempt and derision for such idiotic imaginings.</p>
 
-            <a href="#pageone" class="ui-btn ui-icon-home ui-btn-icon-left ui-btn-icon-notext ui-corner-all ui-shadow ui-shadow-icon  ui-btn-inline ui-nodisc-icon ui-alt-icon" data-transition="turn">next</a>
+            <a href="bookimg.html" class=" ui-btn-icon-left ui-corner-all ui-shadow ui-shadow-icon  ui-btn-inline ui-nodisc-icon ui-alt-icon" data-transition="turn">First Page</a>
          </div>
 
          <div data-role = "footer">
             <h1>Story by O. Henry</h1>
          </div>
       </div>
+	  </div>
+	  
+	  
         </body>
 </html>
