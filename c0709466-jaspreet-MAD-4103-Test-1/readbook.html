@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+      <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+      <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+   <script>
+       $( document ).on( "pagecreate", "#page1", function() {
+            $( document ).on( "swipeleft swiperight", "#page1", function( e ) {
+               if ( $( ".ui-page-active" ).jqmData( "panel" ) !== "open" ) {
+                  if ( e.type === "swipeleft" ) {
+                     $( "#right-panel" ).panel( "open" );
+                  } else if ( e.type === "swiperight" ) {
+                     $( "#left-panel" ).panel( "open" );
+                  }
+               }
+            });
+         });   
+		 
+		 
+		  $( document ).on( "pagecreate", "#page2", function() {
+            $( document ).on( "swipeleft swiperight", "#page2", function( e ) {
+               if ( $( ".ui-page-active" ).jqmData( "panel" ) !== "open" ) {
+                  if ( e.type === "swipeleft" ) {
+                     $( "#right-panel2" ).panel( "open" );
+                  } else if ( e.type === "swiperight" ) {
+                     $( "#left-panel2" ).panel( "open" );
+                  }
+               }
+            });
+         });  
+		 
+		 
+		 
+		 
+		  $( document ).on( "pagecreate", "#page3", function() {
+            $( document ).on( "swipeleft swiperight", "#page3", function( e ) {
+               if ( $( ".ui-page-active" ).jqmData( "panel" ) !== "open" ) {
+                  if ( e.type === "swipeleft" ) {
+                     $( "#right-panel3" ).panel( "open" );
+                  } else if ( e.type === "swiperight" ) {
+                     $( "#left-panel3" ).panel( "open" );
+                  }
+               }
+            });
+         });  
+		 
+		 
+		 
+		 
+		 
+		  $( document ).on( "pagecreate", "#page4", function() {
+            $( document ).on( "swipeleft swiperight", "#page4", function( e ) {
+               if ( $( ".ui-page-active" ).jqmData( "panel" ) !== "open" ) {
+                  if ( e.type === "swipeleft" ) {
+                     $( "#right-panel4" ).panel( "open" );
+                  } else if ( e.type === "swiperight" ) {
+                     $( "#left-panel4" ).panel( "open" );
+                  }
+               }
+            });
+         });  
+		 
+		 
+		  $( document ).on( "pagecreate", "#page5", function() {
+            $( document ).on( "swipeleft swiperight", "#page5", function( e ) {
+               if ( $( ".ui-page-active" ).jqmData( "panel" ) !== "open" ) {
+                  if ( e.type === "swipeleft" ) {
+                     $( "#right-panel5" ).panel( "open" );
+                  } else if ( e.type === "swiperight" ) {
+                     $( "#left-panel5" ).panel( "open" );
+                  }
+               }
+            });
+         });  
+		 
+
+
+      </script>
+	  
+	   
+	  
+
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="assets/js/activeClass.js"></script>
+   </head>
+
+   <body>
+   
+  	
+
+		 
+		<div data-role="page" id="page1" >
+		 
+  
+	<div data-role = "header">
+
+            <h1>The Last Leaf
+            </h1>
+           
+         </div>
+
+         <div data-role = "main" class = "ui-content">
+            <h2>O. Henry</h2>
+			
+			
+	  <div class = "ui-block-c">
+             <a href = "#page2" class = "ui-btn ui-btn-icon-left  ui-icon-carat-r" data-transition = "flip"></a>
+         </div>
+         </div>
+		 
+		  <div data-role = "panel" id = "left-panel" data-theme = "b">
+          
+          
+			    <ul data-role = "listview">
+               <li data-icon = "delete"><a href = "#" data-rel = "close">Close</a></li>
+               <li> <a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/lastleaf.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+               <li><a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/die.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+			 <li><a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/discover.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+              
+            </ul>
+         </div>
+         
+         <div data-role = "panel" id = "right-panel" data-display = "push" 
+            data-position = "right" data-theme = "b">
+          
+			    <ul data-role = "listview">
+               <li data-icon = "delete"><a href = "#" data-rel = "close">Close</a></li>
+               <li> <a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/lastleaf.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+               <li><a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/die.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+             
+            </ul>
+         </div>
+
+         <div data-role = "footer">
+            <h1>Story by O. Henry </h1>
+         </div>
+     
+</div>
+
+
+ 	
+   	<div data-role = "page" id = "page2">
+         <div data-role = "header">
+            <h1>The Last Leaf
+            </h1>
+         </div>
+
+         <div data-role = "main" class = "ui-content">
+            <h2>Introduction</h2>
+            <p>
+            	In a little district west of Washington Square the streets have run crazy and broken themselves into small strips called "places." These "places" make strange angles and curves. One Street crosses itself a time or two. An artist once discovered a valuable possibility in this street. Suppose a collector with a bill for paints, paper and canvas should, in traversing this route, suddenly meet himself coming back, without a cent having been paid on account!
+
+     So, to quaint old Greenwich Village the art people soon came prowling, hunting for north windows and eighteenth-century gables and Dutch attics and low rents. Then they imported some pewter mugs and a chafing dish or two from Sixth Avenue, and became a "colony."
+
+     At the top of a squatty, three-story brick Sue and Johnsy had their studio. "Johnsy" was familiar for Joanna. One was from Maine; the other from California. They had met at the table d'hôte of an Eighth Street "Delmonico's," and found their tastes in art, chicory salad and bishop sleeves so congenial that the joint studio resulted.
+
+     That was in May. In November a cold, unseen stranger, whom the doctors called Pneumonia, stalked about the colony, touching one here and there with his icy fingers. Over on the east side this ravager strode boldly, smiting his victims by scores, but his feet trod slowly through the maze of the narrow and moss-grown "places."
+
+     Mr. Pneumonia was not what you would call a chivalric old gentleman. A mite of a little woman with blood thinned by California zephyrs was hardly fair game for the red-fisted, short-breathed old duffer. But Johnsy he smote; and she lay, scarcely moving, on her painted iron bedstead, looking through the small Dutch window-panes at the blank side of the next brick house.
+
+     One morning the busy doctor invited Sue into the hallway with a shaggy, grey eyebrow.
+
+     "She has one chance in - let us say, ten," he said, as he shook down the mercury in his clinical thermometer. " And that chance is for her to want to live. This way people have of lining-u on the side of the undertaker makes the entire pharmacopoeia look silly. Your little lady has made up her mind that she's not going to get well. Has she anything on her mind?"
+         </p>   
+            
+             
+             <div class = "ui-grid-b">
+             	<div class = "ui-block-b">
+         	 <a href = "#page1" class = "ui-btn ui-btn-icon-left ui-icon-carat-l" data-transition = "flip"></a>
+           
+         </div>
+             	<div class = "ui-block-b">
+            <a href = "#page1" class = "ui-btn ui-btn-icon-left ui-icon-home" data-transition = "flip"></a>
+         </div>
+        
+         
+         	 <div class = "ui-block-c">
+             <a href = "#page3" class = "ui-btn ui-btn-icon-left  ui-icon-carat-r" data-transition = "flip"></a>
+         </div>
+        
+         
+         </div>
+         </div>
+		 
+		 
+		 
+		 <div data-role = "panel" id = "left-panel2" data-theme = "b">
+           
+          
+			    <ul data-role = "listview">
+               <li data-icon = "delete"><a href = "#" data-rel = "close">Close</a></li>
+               <li> <a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/lastleaf.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+               <li><a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/die.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+              
+            </ul>
+         </div>
+         
+         <div data-role = "panel" id = "right-panel2" data-display = "push" 
+            data-position = "right" data-theme = "b">
+           
+         
+			    <ul data-role = "listview">
+               <li data-icon = "delete"><a href = "#" data-rel = "close">Close</a></li>
+               <li> <a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/lastleaf.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+               <li><a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/die.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+             
+            </ul>
+         </div>
+
+         <div data-role = "footer">
+            <h1>Story by O. Henry</h1>
+         </div>
+      </div>
+
+
+
+   	<div data-role = "page" id = "page3">
+         <div data-role = "header">
+            <h1>The Last Leaf
+            </h1>
+         </div>
+
+         <div data-role = "main" class = "ui-content">
+          
+            <p>
+            	"She - she wanted to paint the Bay of Naples some day." said Sue.
+
+     "Paint? - bosh! Has she anything on her mind worth thinking twice - a man for instance?"
+
+     "A man?" said Sue, with a jew's-harp twang in her voice. "Is a man worth - but, no, doctor; there is nothing of the kind."
+
+     "Well, it is the weakness, then," said the doctor. "I will do all that science, so far as it may filter through my efforts, can accomplish. But whenever my patient begins to count the carriages in her funeral procession I subtract 50 per cent from the curative power of medicines. If you will get her to ask one question about the new winter styles in cloak sleeves I will promise you a one-in-five chance for her, instead of one in ten."
+
+     After the doctor had gone Sue went into the workroom and cried a Japanese napkin to a pulp. Then she swaggered into Johnsy's room with her drawing board, whistling ragtime.
+
+     Johnsy lay, scarcely making a ripple under the bedclothes, with her face toward the window. Sue stopped whistling, thinking she was asleep.
+
+     She arranged her board and began a pen-and-ink drawing to illustrate a magazine story. Young artists must pave their way to Art by drawing pictures for magazine stories that young authors write to pave their way to Literature.
+
+     As Sue was sketching a pair of elegant horseshow riding trousers and a monocle of the figure of the hero, an Idaho cowboy, she heard a low sound, several times repeated. She went quickly to the bedside.
+
+     Johnsy's eyes were open wide. She was looking out the window and counting - counting backward.
+
+     "Twelve," she said, and little later "eleven"; and then "ten," and "nine"; and then "eight" and "seven", almost together.
+
+     Sue look solicitously out of the window. What was there to count? There was only a bare, dreary yard to be seen, and the blank side of the brick house twenty feet away. An old, old ivy vine, gnarled and decayed at the roots, climbed half way up the brick wall. The cold breath of autumn had stricken its leaves from the vine until its skeleton branches clung, almost bare, to the crumbling bricks.
+            </p>
+            
+            
+           <div class = "ui-grid-b">
+             	<div class = "ui-block-b">
+         	 <a href = "#page2" class = "ui-btn ui-btn-icon-left ui-icon-carat-l" data-transition = "flip"></a>
+           
+         </div>
+             	<div class = "ui-block-b">
+            <a href = "#page1" class = "ui-btn ui-btn-icon-left ui-icon-home" data-transition = "flip"></a>
+         </div>
+        
+         
+         	 <div class = "ui-block-c">
+             <a href = "#page4" class = "ui-btn ui-btn-icon-left  ui-icon-carat-r" data-transition = "flip"></a>
+         </div>
+        
+         
+         </div>
+         </div>
+		 
+		 
+		 
+		 <div data-role = "panel" id = "left-panel3" data-theme = "b">
+          
+         
+			    <ul data-role = "listview">
+               <li data-icon = "delete"><a href = "#" data-rel = "close">Close</a></li>
+               <li> <a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/lastleaf.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+               <li><a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/die.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+              
+            </ul>
+         </div>
+         
+         <div data-role = "panel" id = "right-panel3" data-display = "push" 
+            data-position = "right" data-theme = "b">
+           
+       
+			    <ul data-role = "listview">
+               <li data-icon = "delete"><a href = "#" data-rel = "close">Close</a></li>
+               <li> <a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/lastleaf.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+               <li><a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/die.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+             
+            </ul>
+         </div>
+
+         <div data-role = "footer">
+            <h1>Story by O. Henry</h1>
+         </div>
+      </div>
+
+
+
+   	<div data-role = "page" id = "page4">
+         <div data-role = "header">
+            <h1>The Last Leaf
+            </h1>
+         </div>
+
+         <div data-role = "main" class = "ui-content">
+           
+            <p>
+            	     "What is it, dear?" asked Sue.
+
+     "Six," said Johnsy, in almost a whisper. "They're falling faster now. Three days ago there were almost a hundred. It made my head ache to count them. But now it's easy. There goes another one. There are only five left now."
+
+     "Five what, dear? Tell your Sudie."
+
+     "Leaves. On the ivy vine. When the last one falls I must go, too. I've known that for three days. Didn't the doctor tell you?"
+
+     "Oh, I never heard of such nonsense," complained Sue, with magnificent scorn. "What have old ivy leaves to do with your getting well? And you used to love that vine so, you naughty girl. Don't be a goosey. Why, the doctor told me this morning that your chances for getting well real soon were - let's see exactly what he said - he said the chances were ten to one! Why, that's almost as good a chance as we have in New York when we ride on the street cars or walk past a new building. Try to take some broth now, and let Sudie go back to her drawing, so she can sell the editor man with it, and buy port wine for her sick child, and pork chops for her greedy self."
+
+     "You needn't get any more wine," said Johnsy, keeping her eyes fixed out the window. "There goes another. No, I don't want any broth. That leaves just four. I want to see the last one fall before it gets dark. Then I'll go, too."
+
+     "Johnsy, dear," said Sue, bending over her, "will you promise me to keep your eyes closed, and not look out the window until I am done working? I must hand those drawings in by to-morrow. I need the light, or I would draw the shade down."
+
+     "Couldn't you draw in the other room?" asked Johnsy, coldly.
+
+     "I'd rather be here by you," said Sue. "Beside, I don't want you to keep looking at those silly ivy leaves."
+            </p>
+            
+            
+             <div class = "ui-grid-b">
+             	<div class = "ui-block-b">
+         	 <a href = "#page3" class = "ui-btn ui-btn-icon-left ui-icon-carat-l" data-transition = "flip"></a>
+           
+         </div>
+             	<div class = "ui-block-b">
+            <a href = "#page1" class = "ui-btn ui-btn-icon-left ui-icon-home" data-transition = "flip"></a>
+         </div>
+        
+         
+         	 <div class = "ui-block-c">
+             <a href = "#page5" class = "ui-btn ui-btn-icon-left  ui-icon-carat-r" data-transition = "flip"></a>
+         </div>
+        
+         
+         </div>
+         </div>
+		 
+		 
+		  <div data-role = "panel" id = "left-panel4" data-theme = "b">
+           
+           
+			    <ul data-role = "listview">
+               <li data-icon = "delete"><a href = "#" data-rel = "close">Close</a></li>
+               <li> <a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/lastleaf.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+               <li><a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/die.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+              
+            </ul>
+         </div>
+         
+         <div data-role = "panel" id = "right-panel4" data-display = "push" 
+            data-position = "right" data-theme = "b">
+          
+           
+			    <ul data-role = "listview">
+               <li data-icon = "delete"><a href = "#" data-rel = "close">Close</a></li>
+               <li> <a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/lastleaf.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+               <li><a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/die.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+             
+            </ul>
+         </div>
+		 
+
+         <div data-role = "footer">
+            <h1>Story by O. Henry</h1>
+         </div>
+      </div>
+
+      <div data-role = "page" id = "page5">
+         <div data-role = "header">
+            <h1>The Last Leaf
+            </h1>
+         </div>
+
+         <div data-role = "main" class = "ui-content">
+        
+            <p>
+            	"Tell me as soon as you have finished," said Johnsy, closing her eyes, and lying white and still as fallen statue, "because I want to see the last one fall. I'm tired of waiting. I'm tired of thinking. I want to turn loose my hold on everything, and go sailing down, down, just like one of those poor, tired leaves."
+
+     "Try to sleep," said Sue. "I must call Behrman up to be my model for the old hermit miner. I'll not be gone a minute. Don't try to move 'til I come back."
+
+     Old Behrman was a painter who lived on the ground floor beneath them. He was past sixty and had a Michael Angelo's Moses beard curling down from the head of a satyr along with the body of an imp. Behrman was a failure in art. Forty years he had wielded the brush without getting near enough to touch the hem of his Mistress's robe. He had been always about to paint a masterpiece, but had never yet begun it. For several years he had painted nothing except now and then a daub in the line of commerce or advertising. He earned a little by serving as a model to those young artists in the colony who could not pay the price of a professional. He drank gin to excess, and still talked of his coming masterpiece. For the rest he was a fierce little old man, who scoffed terribly at softness in any one, and who regarded himself as especial mastiff-in-waiting to protect the two young artists in the studio above.
+
+     Sue found Behrman smelling strongly of juniper berries in his dimly lighted den below. In one corner was a blank canvas on an easel that had been waiting there for twenty-five years to receive the first line of the masterpiece. She told him of Johnsy's fancy, and how she feared she would, indeed, light and fragile as a leaf herself, float away, when her slight hold upon the world grew weaker.
+
+     Old Behrman, with his red eyes plainly streaming, shouted his contempt and derision for such idiotic imaginings.
+            </p>
+            
+            
+             <div class = "ui-grid-b">
+             	<div class = "ui-block-b">
+         	 <a href = "#page4" class = "ui-btn ui-btn-icon-left ui-icon-carat-l" data-transition = "flip"></a>
+           
+         </div>
+             	<div class = "ui-block-b">
+            <a href = "#page1" class = "ui-btn ui-btn-icon-left ui-icon-home" data-transition = "flip"></a>
+         </div>
+        
+         
+         	 <div class = "ui-block-c">
+             <a href = "readbook.html" class = "ui-btn ui-btn-icon-left  ui-icon-carat-r" data-transition = "flip"></a>
+         </div>
+        
+         
+         </div>
+         </div>
+		 
+		 
+		 
+		  <div data-role = "panel" id = "left-panel5" data-theme = "b">
+          
+        
+			    <ul data-role = "listview">
+               <li data-icon = "delete"><a href = "#" data-rel = "close">Close</a></li>
+               <li> <a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/lastleaf.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+               <li><a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/die.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+              
+            </ul>
+         </div>
+         
+         <div data-role = "panel" id = "right-panel5" data-display = "push" 
+            data-position = "right" data-theme = "b">
+           
+           
+			    <ul data-role = "listview">
+               <li data-icon = "delete"><a href = "#" data-rel = "close">Close</a></li>
+               <li> <a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/lastleaf.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+               <li><a href="readbook.html"  rel="external" data-ajax="false">
+            <img src="img/die.jpg" alt="Photo"  data-equalizer-watch width="100px" height="100px" ></a></li>
+             
+            </ul>
+         </div>
+
+         <div data-role = "footer">
+            <h1>Story by O. Henry</h1>
+         </div>
+      </div>
+	  
+
+
+      </body>
+</html>
