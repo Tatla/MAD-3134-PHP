@@ -1,319 +1,220 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-		alert("Hello");
-		window.addEventListener("batterystatus", onBatteryStatus, false); 
-		
-		window.document.getElementById("getFile").addEventListener("click", getFileData);
-		window.document.getElementById("getAcceleration").addEventListener("click", getAcceleration);
-window.document.getElementById("watchAcceleration").addEventListener(
-   "click", watchAcceleration);
-   
-   
-   window.document.getElementById("getPosition").addEventListener("click", getPosition);
-window.document.getElementById("watchPosition").addEventListener("click", watchPosition);
-
-document.getElementById("vibration").addEventListener("click", vibration);
-document.getElementById("vibrationPattern").addEventListener("click", vibrationPattern);
-
-window.document.getElementById("playAudio").addEventListener("click", playAudio);
-window.document.getElementById("pauseAudio").addEventListener("click", pauseAudio);
-window.document.getElementById("stopAudio").addEventListener("click", stopAudio);
-window.document.getElementById("volumeUp").addEventListener("click", volumeUp);
-window.document.getElementById("volumeDown").addEventListener("click", volumeDown);
-
-
-window.document.getElementById("dialogAlert").addEventListener("click", dialogAlert);
-window.document.getElementById("dialogConfirm").addEventListener("click", dialogConfirm);
-window.document.getElementById("dialogPrompt").addEventListener("click", dialogPrompt);
-window.document.getElementById("dialogBeep").addEventListener("click", dialogBeep);
-		
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+(function() {
+  var ques = [ {
+  
+    "Ques": "Before leaving you car parked on a downgrade, you should:",
+    "options": ["Turn your front wheel to the left and set your parking brake?","Set your parking brake only","Leave your front wheels parallel to the curb","Turn your front wheels to the right and set your parking brake"],
+    "Answer": 4
+  }, {
+    "Ques": "If you have G1 or G2 Licence and you are driving under influence of alcohol ?",
+    "options": ["You will be called for an interview","Your Licence will be cancelled.","You will receive a warning letter","Your Licence will be suspended for 30 days and you may be charged under criminal code."],
+    "Answer": 4
+  }, {
+    "Ques": "If you first convicted criminaly for how long your Licence could be suspended.",
+    "options": ["One year","Two year","Three year","Five year"],
+    "Answer": 1
+  }, {
+    "Ques": "The broken centre line on a roadway means you may:",
+    "options": ["Never pass?"," Pass if the way is clear?","Pass at any time?","Pass only during daylight hours?"],
+    "Answer": 2
+  }, {
+    "Ques": "When driving in heavy fog, you should use:",
+   "options": ["Low beam headlights?","Parking lights","Parking lights and high beam headlights?","High beam headlights."],
+   "Answer": 1
+  }, {
+    "Ques": "Which of the following hand-and-arm signals is correct for slowing or stopping?",
+    "options": ["Arm straight out of the window","Arm out and up.","Arm out and down.","Circle motion."],
+    "Answer": 3
+  }, {
+    "Ques": "If you have G1 Licence at what time you are not suppose to drive?",
+    "options": ["½ hour after sunrise and ½ hour before sunset","From midnight till 5 am","In the Bad weather when visibility is poor","In Rush Hours"],
+    "Answer": 2
+  }, {
+    "Ques": "When there is cyclist in your lane you should?",
+    "options": ["Blow the horn & Pass","Pass the cyclist in same lane","Check in mirrors, signal, check the blindspot, if it is safe make the lane change & pass the cyclist.","Wait for the cyclist give the way then pass him"],
+    "Answer": 3
+  }, {
+    "Ques": "To avoid the collision, you should?",
+    "options": ["Always keep your headlights on","Do not drive in busy traffic","Keep more space in left, right, front and back of your vehicle and try to adjust you speed accordingly","Donít drive in bad weather."],
+    "Answer": 3
+  }, {
+    "Ques": "Except when you tend to overtake and pass another vehicle or when you intend to make a left turn, you should:",
+    "options": ["Drive in the centre of the roadway?","Always keep well to the right?","Drive on the shoulder of the highway?","Always keep well to the left?"],
+    "Answer": 2
+  },{
+    "Ques": "Which of the following has the right-of-way over all others at an intersection when the signal light is green?",
+    "options": ["Pedestrians crossing with the light.","Vehicles turning right","Pedestrians crossing against the light","Vehicles turning left"],
+    "Answer": 1
+  }, {
+    "Ques": "You should under all conditions drive at a speed which will allow you to:",
+    "options": ["Stop within 90m (300 ft)?","Stop within 60m (200ft)?","Stop within 150m (500 ft)?","Stop within a safe distance?"],
+    "Answer": 4
+  }, {
+    "Ques": "If you have G1 Licence, the driver setting beside you should be",
+    "options": [" Owner of the vehicle."," Be your relative or friend.","Must sit on the front seat alone.","Must have done defensive driving course"],
+    "Answer": 3
+  }, {
+    "Ques": "To get your vehicle out of skid, you should first:",
+    "options": ["Steer straight ahead","Steer in the direction of the skid?","Steer in the opposite direction of the skid?","Apply brake hard?"],
+    "Answer": 2
+  }, {
+    "Ques": "At an intersection where there is a flashing amber(yellow) traffic light, you must:",
+    "options": ["Stop if making right turn?"," Continue at same speed?","Stop if making left turn?"," Slow down and proceed with caution?"],
+    "Answer": 4
+  }, {
+    "Ques": "If your licence get suspended under what circumstance you could still drive.",
+    "options": [" If you think you are very skilled driver.","You can not drive at all"],
+    "Answer": 2
+  }, {
+    "Ques": " If you have G1 or G2 Licence, after how many demerit points your licence could be suspended.",
+    "options": ["4 demerit points.","6 demerit points.","8 demerit points.","During first two year 9 or more demerit points"],
+    "Answer": 4
+  }, {
+    "Ques": "A flashing blue light mounted on a motor vehicle indicates:",
+    "options": ["Motor vehicle carrying explosives?","Snow removal equipment?","An ambulance?","A police emergency vehicle?"],
+    "Answer": 2
+  }, {
+    "Ques": "How close to a fire hydrant may you legally park?",
+    "options": ["1.5 meters (5ft)?","6 meters (20 ft)?","4.5 meters (15 ft)?","3 meters (10ft)?"],
+    "Answer": 4
+  },
+   {
+    "Ques": "When you make a left turn what hand signal is correct.",
+     "options":["Arm straight at out of window","Arm out and up","Arm out and down","Circle motion"],
+   "Answer": 1
+  }
+  ];
+  
+  var questionCount = 0; 
+  var selections = []; 
+  var showdata = $('#showdata'); 
+  
+ 
+  displayNext();
+  
+  
+  $('#next').on('click', function (e) {
+    e.preventDefault();
+    
+ 
+    if(showdata.is(':animated')) {        
+      return false;
     }
-};
-
-function onBatteryStatus(info) { 
-   alert("BATTERY STATUS:  Level: " + info.level + " isPlugged: " + info.isPlugged); 
-}
-
-
-
-
-function getAcceleration() {
-   navigator.accelerometer.getCurrentAcceleration(
-      accelerometerSuccess, accelerometerError);
-
-   function accelerometerSuccess(acceleration) {
-      alert('Acceleration X: ' + acceleration.x + '\n' +
-         'Acceleration Y: ' + acceleration.y + '\n' +
-         'Acceleration Z: ' + acceleration.z + '\n' +
-         'Timestamp: '      + acceleration.timestamp + '\n');
-   };
-
-   function accelerometerError() {
-      alert('onError!');
-   };
-};
-
-function getFileData(){
-	//alert("file data called");
-	
-	var rawFile = new XMLHttpRquest();
-	alert("hi");
-	rawFile.open("GET",'userData.json',false);
-	
-	var allText='';
-	rawFile.onreadystatechange= function()
-	{
-		if (rawFile.readyState===4)
-		{
-			if(rawFile.status===200|| rawFile.status==0)
-			{
-				allText=rawFile.responseText;
-				alert(allText);
-			}
-		}
-	}
-	rawFile.send(null);
-	
-	var parsedData=JSON.pase(allText);
-	var outputText='';
-	
-	for (x in parsedData){
-		outputText += parsedData[x] + "<br>";
-	}
-	
-	document.getElementById("dataParsed").innerHTML=outputText;
-};
-
-function watchAcceleration() {
-   var accelerometerOptions = {
-      frequency: 3000
-   }
-   var watchID = navigator.accelerometer.watchAcceleration(
-      accelerometerSuccess, accelerometerError, accelerometerOptions);
-
-   function accelerometerSuccess(acceleration) {
-      alert('Acceleration X: ' + acceleration.x + '\n' +
-         'Acceleration Y: ' + acceleration.y + '\n' +
-         'Acceleration Z: ' + acceleration.z + '\n' +
-         'Timestamp: '      + acceleration.timestamp + '\n');
-
-      setTimeout(function() {
-         navigator.accelerometer.clearWatch(watchID);
-      }, 10000);
-   };
-
-   function accelerometerError() {
-      alert('onError!');
-   };
-}
-
-
-
-
-
-function getPosition() {
-   var options = {
-      enableHighAccuracy: true,
-      maximumAge: 3600000
-   }
-   var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
-
-   function onSuccess(position) {
-      alert('Latitude: '          + position.coords.latitude          + '\n' +
-         'Longitude: '         + position.coords.longitude         + '\n' +
-         'Altitude: '          + position.coords.altitude          + '\n' +
-         'Accuracy: '          + position.coords.accuracy          + '\n' +
-         'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-         'Heading: '           + position.coords.heading           + '\n' +
-         'Speed: '             + position.coords.speed             + '\n' +
-         'Timestamp: '         + position.timestamp                + '\n');
-   };
-
-   function onError(error) {
-      alert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n');
-   }
-}
-
-function watchPosition() {
-   var options = {
-      maximumAge: 3600000,
-      timeout: 3000,
-      enableHighAccuracy: true,
-   }
-   var watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);
-
-   function onSuccess(position) {
-      alert('Latitude: '          + position.coords.latitude          + '\n' +
-         'Longitude: '         + position.coords.longitude         + '\n' +
-         'Altitude: '          + position.coords.altitude          + '\n' +
-         'Accuracy: '          + position.coords.accuracy          + '\n' +
-         'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-         'Heading: '           + position.coords.heading           + '\n' +
-         'Speed: '             + position.coords.speed             + '\n' +
-         'Timestamp: '         + position.timestamp                + '\n');
-   };
-
-   function onError(error) {
-      alert('code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
-   }
-}
-
-
-
-var myMedia = null;
-function playAudio() {
-   var src = "/android_asset/www/audio/chapter1.mp3";
-
-   if(myMedia === null) {
-      myMedia = new Media(src, onSuccess, onError);
-
-      function onSuccess() {
-         console.log("playAudio Success");
-      }
-
-      function onError(error) {
-         console.log("playAudio Error: " + error.code);
-      }
-   }
-   myMedia.play();
-}
-
-
-
-function pauseAudio() {
-   if(myMedia) {
-      myMedia.pause();
-   }
-}
-
-function stopAudio() {
-   if(myMedia) {
-      myMedia.stop(); 
-   }
-   myMedia = null;
-}
-
-
-
-var volumeValue = 0.5;
-function volumeUp() {
-   if(myMedia && volumeValue < 1) {
-      myMedia.setVolume(volumeValue += 0.1);
-   }
-}
-
-function volumeDown() {
-   if(myMedia && volumeValue > 0) {
-      myMedia.setVolume(volumeValue -= 0.1);
-   }
-}
-
-
-
-function dialogAlert() {
-   var message = "I am Alert Dialog!";
-   var title = "ALERT";
-   var buttonName = "Alert Button";
-   navigator.notification.alert(message, alertCallback, title, buttonName);
+    choose();
+    
    
-   function alertCallback() {
-      console.log("Alert is Dismissed!");
-   }
-}
+    if (isNaN(selections[questionCount])) {
+      alert('Choose One Option');
+    } else {
+      questionCount++;
+      displayNext();
+    }
+  });
+  
+ 
+  $('#back').on('click', function (e) {
+    e.preventDefault();
+    
+    if(showdata.is(':animated')) {
+      return false;
+    }
+    choose();
+    questionCount--;
+    displayNext();
+  });
+  
+ 
+  $('#start').on('click', function (e) {
+    e.preventDefault();
+    
+    if(showdata.is(':animated')) {
+      return false;
+    }  
+    questionCount = 0;
+    selections = [];
+    displayNext();
 
+  });
 
+  function createQuesEle(index) {
+    var qElement = $('<div>', {
+      id: 'Ques'
+    });
+    
+    var header = $('<h2>Choose one option <br> Question ' + (index + 1) + ':</h2>');
+    qElement.append(header);
+    
+    var Ques = $('<p>').append(ques[index].Ques);
+    qElement.append(Ques);
+    
+    var radioButtons = cRadiobtn(index);
+    qElement.append(radioButtons);
+    
+    return qElement;
+  }
+  
 
-function dialogConfirm() {
-   var message = "Am I Confirm Dialog?";
-   var title = "CONFIRM";
-   var buttonLabels = "YES,NO";
-   navigator.notification.confirm(message, confirmCallback, title, buttonLabels);
+  function cRadiobtn(index) {
+    var radioList = $('<ol>');
+    var item;
+    var input = '';
+    for (var i = 0; i < ques[index].options.length; i++) {
+      item = $('<li>');
+      input = '<input type="radio" name="answer" value=' + i + ' />';
+      input += ques[index].options[i];
+      item.append(input);
+      radioList.append(item);
+    }
+    return radioList;
+  }
+  
+  
+  function choose() {
+    selections[questionCount] = +$('input[name="answer"]:checked').val();
+  }
+  
+ 
+  function displayNext() {
+    showdata.fadeOut(function() {
+      $('#Ques').remove();
+      
+      if(questionCount < ques.length){
+        var nextQues = createQuesEle(questionCount);
+        showdata.append(nextQues).fadeIn();
+        if (!(isNaN(selections[questionCount]))) {
+          $('input[value='+selections[questionCount]+']').prop('checked', true);
+        }
+        
+      
+        if(questionCount === 1){
+          $('#back').show();
+        } else if(questionCount === 0){
+          
+          $('#back').hide();
+          $('#next').show();
+        }
+      }else {
+        var resultElem = displayResult();
+        showdata.append(resultElem).fadeIn();
+        $('#next').hide();
+        $('#back').hide();
+     
+      }
+    });
+  }
+  
 
-   function confirmCallback(buttonIndex) {
-      console.log("You clicked " + buttonIndex + " button!");
-   }
-	
-}
-
-
-function dialogPrompt() {
-   var message = "Am I Prompt Dialog?";
-   var title = "PROMPT";
-   var buttonLabels = ["YES","NO"];
-   var defaultText = "Default"
-   navigator.notification.prompt(message, promptCallback, 
-      title, buttonLabels, defaultText);
-
-   function promptCallback(result) {
-      console.log("You clicked " + result.buttonIndex + " button! \n" + 
-         "You entered " +  result.input1);
-   }
-	
-}
-
-
-
-
-function dialogBeep() {
-   var times = 2;
-   navigator.notification.beep(times);
-}
-
-
-function vibration() {
-   var time = 3000;
-   navigator.vibrate(time);
-}
-
-function vibrationPattern() {
-   var pattern = [1000, 1000, 1000, 1000];
-   navigator.vibrate(pattern);
-};
-
-
-
+  function displayResult() {
+    var score = $('<p>',{id: 'Ques'});
+    
+    var correctAns = 0;
+    for (var i = 0; i < selections.length; i++) {
+      if (selections[i] === ques[i].Answer) {
+        correctAns++;
+      }
+    }
+    
+    score.append('Your Score: <br>' + correctAns + ' / ' +
+                 ques.length);
+    return score;
+  }
+})();
