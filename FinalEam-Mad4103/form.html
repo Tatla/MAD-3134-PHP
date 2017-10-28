@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src  * 'self' 'unsafe-inline'; media-src 'self' blob: ; img-src * 'self' data: https:" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Hello World</title>
+        <script>
+function showConfirmationDialog() {
+
+  var copies = document.getElementById('copies');
+    var size1 = document.getElementById('size1');
+     var price = document.getElementById('price');
+if ($size1 == checked){
+    alert('You chosen:'+'\n'+'\n'+'copies: '+copies.value +'\n'+'size: ' +size1.value+'\n' +'price: ' +copies.value*10+'\n');
+}
+else if ($size2 == checked){
+ alert('You chosen:'+'\n'+'\n'+'copies: '+copies.value +'\n'+'size: ' +size.value+'\n' +'price: ' +copies.value*20+'\n');
+ }
+ else if ($size3 == checked){
+ alert('You chosen:'+'\n'+'\n'+'copies: '+copies.value +'\n'+'size: ' +size.value+'\n' +'price: ' +copies.value*20+'\n');
+ }
+ else if ($size4 == checked){
+ alert('You chosen:'+'\n'+'\n'+'copies: '+copies.value +'\n'+'size: ' +size.value+'\n' +'price: ' +copies.value*40+'\n');
+ }
+
+
+  
+ 
+    
+}
+</script>
+</head>
+<body>
+	<form action="" method="get" name="form1" >
+    <fieldset>
+    <legend>Details</legend>
+    
+  
+        <label for="Name"> Name:</label>
+        <input type="text" name="Name" id="Name" required><br />
+    
+       <label for="Address"> Address:</label>
+        <input type="text" name="Address" id="Address" required><br />
+
+  <label for="Email">Email:</label>
+        <input type="email" name="Email" id="Email" required><br />
+
+  <label for="phonenumber">Phone Number:</label>
+        <input type="text" name="phonenumber" id="phonenumber" required><br />
+
+  <label for="copies">No.of copies:</label>
+        <input type="number" name="copies" id="copies" required ><br />
+
+  <label for="size">Photo size:</label>
+       <select name="size">
+  <option value="32*40" id="size1">32*40 </option>
+  <option value="8*10" id="size2">8*10</option>
+  <option value="14*12" id="size3">14*12</option>
+  <option value="6*15" id="size4">6*15</option>
+</select>
+<br/>
+        
+       
+        <label for = "date">Date of delivery:</label>
+               <input type = "date" name = "date"><br/>
+
+<input type="button" value="Submit" onclick="showConfirmationDialog();" /><br></br>
+  <script>
+ 
+
+
+</script>
+ <input type="reset" value="Reset" id="reset" onclick="copy()">
+</fieldset> 
+</form>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>
+
+
